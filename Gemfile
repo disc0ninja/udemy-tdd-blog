@@ -40,13 +40,13 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   # rspec behavior driven development framework
-  gem 'rspec-rails', '3.1.0'
+  gem 'rspec-rails', '3.5.0'
 
 end
 
 group :test do
   # capybara for simulating user interactions during testing
-  gem 'capybara', '2.7.1'
+  gem 'capybara', '2.12.1'
 end
 
 group :development do
