@@ -13,3 +13,13 @@
  */
 
 @import 'material';
+/* Phone */
+@import 'phone' only screen
+and (max-width: 600px);
+/* Tablet */
+@import 'tablet' only screen
+and (min-width: 601px)
+and (max-width: 840px);
+/* Desktop */
+@import 'desktop' only screen
+and (min-width: 841px);
