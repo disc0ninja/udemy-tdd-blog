@@ -11,8 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
+@import 'colors';
 @import 'material';
+@import 'messages';
 /* Phone */
 @import 'phone' only screen
 and (max-width: 600px);

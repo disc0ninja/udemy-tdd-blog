@@ -1,0 +1,12 @@
+$color-primary: rgb(36, 41, 46) !default;
+$color-primary-dark: darken($color-primary, 5%) !default;
+// $color-accent: ;
+// $color-primary-contrast ;
+// $color-accent-contrast ;
+
+/* navigation background color */
+$layout-header-bg-color: lighten($color-primary, 7%);
+
+/* color for success and errors */
+$success-color: #80BA54;
+$danger-color: #C7241B;
