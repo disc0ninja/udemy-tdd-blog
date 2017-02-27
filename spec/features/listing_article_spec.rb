@@ -22,5 +22,23 @@ RSpec.feature "Listing Articles" do
     expect(page).to have_link(@article2.title)
   end
 
+  scenario "A user has no articles to list" do
+    # Clear out created articles
+    Article.delete_all
+    visit "/"
+  # expect both article titles to be present
+    expect(page).not_to have_content(@article1.title)
+    expect(page).not_to have_content(@article1.body)
+  # expect both artilce bodies to be present
+    expect(page).not_to have_content(@article2.title)
+    expect(page).not_to have_content(@article2.body)
+  # article titles shoudl be links
+    expect(page).not_to have_link(@article1.title)
+    expect(page).not_to have_link(@article2.title)
+  # expect there to be a message explaingin no articles are created
+    within("h3#no-articles") do
+      expect(page).to have_content("No Articles Created Yet.")
+    end
+  end
+
 end
-  
