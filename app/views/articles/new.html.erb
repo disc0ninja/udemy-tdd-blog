@@ -1,0 +1,29 @@
+<h3>Adding New Article</h3>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--12-col">
+    <%= form_for(@article, :html => {role: "form"}) do |f| %>
+      <div>
+        <div class="mdl-cell mdl-cell--1-col">
+          <%= f.label :title %>
+        </div>
+        <div class="mdl-cell mdl-cell--11-col">
+          <%= f.text_field :title, placeholder: "Title of article", autofocus: true %>
+        </div>
+      </div>
+      <div>
+        <div class="mdl-cell mdl-cell--1-col">
+          <%= f.label :body %>
+        </div>
+        <div class="mdl-cell mdl-cell--11-col">
+          <%= f.text_area :body, rows: 10, placeholder: "Body of article" %>
+        </div>
+      </div>
+      <div>
+        <div class="mdl-cell mdl-cell--1-offset mdl-cell--11-col">
+          <%= f.submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
