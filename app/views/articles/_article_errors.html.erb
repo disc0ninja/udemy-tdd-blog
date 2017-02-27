@@ -3,10 +3,10 @@
       mdl-cell--4-col-phone
       mdl-card mdl-shadow--3dp alert alert-danger">
   <div class="mdl-card__title alert-danger-title">
-    <h4 class="center-text"><%= pluralize(@article.errors.count, "Error") %>
+    <h4 class="center-block"><%= pluralize(@article.errors.count, "Error") %>
     prohibited this article from being saved:</h4>
   </div>
-  <div class="mld-card__supporting-text center-text">
+  <div class="mld-card__supporting-text center-block">
     <ul>
       <%@article.errors.full_messages.each do |msg| %>
         <li>
