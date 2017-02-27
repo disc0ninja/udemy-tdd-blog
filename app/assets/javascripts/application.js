@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require material
 //= require_tree .
+
+// fix turbolinks v5 so they work with mdl
+document.addEventListener('turbolinks:load', function() {
+  componentHandler.upgradeDom();
+});
