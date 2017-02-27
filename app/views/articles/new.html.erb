@@ -1,5 +1,18 @@
 <h3>Adding New Article</h3>
 <%= form_for(@article, :html => {role: "form"}) do |f| %>
+<% if @article.errors.any? %>
+<h3>
+  <%= pluralize(@article.errors.count, "Error") %>
+  prohibited this article from being saved:
+</h3>
+<ul>
+  <%@article.errors.full_messages.each do |msg| %>
+    <li>
+      <%= msg %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
   <div class="mdl-grid">
 
     <div class="mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
