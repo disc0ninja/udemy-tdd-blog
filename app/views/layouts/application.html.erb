@@ -9,7 +9,11 @@
   </head>
 
   <body>
+    <%= render "layouts/navigation" %>
     <%= render "layouts/messages" %>
-    <%= yield %>
+    <main class="mdl-layout__content">
+      <div class="page-content"><%= yield %></div>
+    </main>
+  </div> <!-- opens in navigation partial -->
   </body>
 </html>

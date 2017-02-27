@@ -1,29 +1,21 @@
 <h3>Adding New Article</h3>
+<%= form_for(@article, :html => {role: "form"}) do |f| %>
+  <div class="mdl-grid">
 
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--12-col">
-    <%= form_for(@article, :html => {role: "form"}) do |f| %>
-      <div>
-        <div class="mdl-cell mdl-cell--1-col">
-          <%= f.label :title %>
-        </div>
-        <div class="mdl-cell mdl-cell--11-col">
-          <%= f.text_field :title, placeholder: "Title of article", autofocus: true %>
-        </div>
-      </div>
-      <div>
-        <div class="mdl-cell mdl-cell--1-col">
-          <%= f.label :body %>
-        </div>
-        <div class="mdl-cell mdl-cell--11-col">
-          <%= f.text_area :body, rows: 10, placeholder: "Body of article" %>
-        </div>
-      </div>
-      <div>
-        <div class="mdl-cell mdl-cell--1-offset mdl-cell--11-col">
-          <%= f.submit %>
-        </div>
-      </div>
-    <% end %>
+    <div class="mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_field :title, id: "article-title", class: "mdl-textfield__input", autofocus: true %>
+        <%= f.label :title, class: "mdl-textfield__label", for: "article-title" %>
+    </div>
   </div>
-</div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_area :body, id: "article-body", class: "mdl-textfield__input", rows: 10 %>
+        <%= f.label :body, class: "mdl-textfield__label", for: "article-body" %>
+    </div>
+  </div>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+      <%= f.submit class: "mdl-button mdl-js-button mdl-button--raised mdl-button-colored mdl-js-ripple-effect" %>
+    </div>
+  </div>
+<% end %>
