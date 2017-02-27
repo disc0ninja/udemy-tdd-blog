@@ -1,1 +1,21 @@
-<%= link_to "New Article", new_article_path %>
+<div class="mdl-grid">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
+    mdl-cell mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+    mdl-cell--6-col-tablet mdl-cell--1-offset-tablet
+    mdl-cell--4-col-phone">
+    <%= link_to "New Article", new_article_path %>
+  </button>
+</div>
+<div class="mdl-grid">
+  <% @articles.each do |art| %>
+    <div class="mdl-cell mdl-cell--4-desktop mdl-card mdl-shadow--3dp">
+      <div class"mdl-card__title">
+        <h4 class="article-title"><%= link_to art.title, article_path(art) %></h4>
+      </div>
+      <div class="mdl-card__supporting-text center-block">
+        <%= truncate(art.body, length: 500) %><br />
+        <small>Last Updated: <%= art.updated_at %></small>
+      </div>
+    </div>
+  <% end %>
+</div>
