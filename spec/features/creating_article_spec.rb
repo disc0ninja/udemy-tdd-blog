@@ -1,11 +1,11 @@
 require "rails_helper"
 
 RSpec.feature "Creating Articles" do
-  scenario "A user creates a new article" do
+  scenario "A user creates the first link to create a new article" do
     # Visit root
     visit "/"
     # Click new article link
-    click_link "New Article"
+    first(:link, "New Article").click
     # Fill in title of article
     fill_in "Title", with: "Creating a blog"
     # Fill in the body of the article
