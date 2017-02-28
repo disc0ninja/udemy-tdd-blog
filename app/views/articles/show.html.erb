@@ -11,6 +11,7 @@
           <%= @article.body %>
         </p><br />
         <small>Last Updated: <%= @article.updated_at.strftime("%B %e, %Y") %></small>
+        <%= link_to "Edit Article", edit_article_path(@article),class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-right" %>
     </div>
   </div>
 </div>
