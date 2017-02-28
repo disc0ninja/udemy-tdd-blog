@@ -15,6 +15,8 @@ RSpec.feature "Show Article" do
     expect(page).to have_content(@article.title)
     # expect the page to have article body
     expect(page).to have_content(@article.body)
+    # expect page to have article updated at time
+    expect(page).to have_content(@article.updated_at.strftime("%B %e, %Y"))
     # expect the current_path to be the same as the article that's created
     expect(current_path).to eq(article_path(@article))
   end
