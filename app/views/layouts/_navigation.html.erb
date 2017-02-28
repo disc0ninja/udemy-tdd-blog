@@ -10,7 +10,11 @@
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
         <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, class: "mdl-navigation__link", id: "nav-bar-sign-out", method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link", id: "nav-bar-sign-up" %>
+        <% end %>
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
@@ -20,7 +24,11 @@
     <nav class="mdl-navigation">
       <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
       <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, class: "mdl-navigation__link", id: "nav-drawer-sign-out", method: :delete %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link", id: "nav-drawer-sign-up" %>
+      <% end %>
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
