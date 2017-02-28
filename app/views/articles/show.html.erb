@@ -1,0 +1,16 @@
+<div class="mdl-grid">
+  <div class="mdl-card mdl-shadow--3dp mdl-cell
+    mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+    mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+    mdl-cell--6-col-phone">
+    <div class="mdl-card__title">
+      <h1><%= @article.title %></h1>
+    </div>
+    <div class="mdl-card__supporting-text">
+        <p>
+          <%= @article.body %>
+        </p><br />
+        <small>Last Updated: <%= @article.updated_at.strftime("%B, %e, %Y") %></small>
+    </div>
+  </div>
+</div>

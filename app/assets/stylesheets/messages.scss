@@ -2,11 +2,6 @@
   Messages
 ***********************************************/
 
-/* fix text alignment in error message dialogs */
-.center-block {
-  margin: 0 auto;
-}
-
 /* Set colors for error message dialog backgrounds */
 .alert-danger {
   background-color: lighten($danger-color, 40%);
