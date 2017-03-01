@@ -11,8 +11,10 @@
           <%= @article.body %>
         </p><br />
         <small>Last Updated: <%= @article.updated_at.strftime("%B %e, %Y") %></small>
-        <%= link_to "Edit Article", edit_article_path(@article),class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-right" %>
-        <%= link_to "Delete Article", article_path(@article), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-right", method: :delete, data: { confirm: "Are you sure you want to delete article?" } %>
+        <% if user_signed_in? && current_user.email == @article.user.email %>
+          <%= link_to "Edit Article", edit_article_path(@article),class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-right" %>
+          <%= link_to "Delete Article", article_path(@article), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect pull-right", method: :delete, data: { confirm: "Are you sure you want to delete article?" } %>
+        <% end %>
     </div>
   </div>
 </div>
