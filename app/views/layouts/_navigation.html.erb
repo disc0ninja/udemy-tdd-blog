@@ -11,7 +11,7 @@
         <!-- Articl Links -->
         <% if user_signed_in? %>
           <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
-          <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+          <%= link_to "New Article", new_article_path, class: "mdl-navigation__link", id: "nav-bar-new-article-link"%>
         <% else %>
           <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
         <% end %>
@@ -34,7 +34,7 @@
     <nav class="mdl-navigation">
       <% if user_signed_in? %>
         <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
-        <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+        <%= link_to "New Article", new_article_path, class: "mdl-navigation__link", id: "nav-drawer-new-article-link" %>
       <% else %>
         <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
       <% end %>

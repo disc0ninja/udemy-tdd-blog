@@ -1,8 +1,17 @@
 <div class="mdl-grid">
-  <%= link_to "New Article", new_article_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
-    mdl-cell mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
-    mdl-cell--6-col-tablet mdl-cell--1-offset-tablet
-    mdl-cell--4-col-phone" %>
+  <% if user_signed_in? %>
+    <%= link_to "New Article", new_article_path, class: "mdl-button
+      mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      mdl-cell mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+      mdl-cell--6-col-tablet mdl-cell--1-offset-tablet
+      mdl-cell--4-col-phone", id: "article-index-new-article-link" %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path, class: "mdl-button
+      mdl-js-button mdl-button--raised mdl-js-ripple-effect
+      mdl-cell mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+      mdl-cell--6-col-tablet mdl-cell--1-offset-tablet
+      mdl-cell--4-col-phone", id: "article-index-sign-in" %>
+  <% end %>
 </div>
 <% if @articles.empty? %>
   <div class="mdl-grid">
@@ -14,7 +23,18 @@
         <h3 id="no-articles">No Articles Created Yet.</h3>
       </div>
       <div class="mdl-card__supporting-text center-block">
-        <h5>Click <%= link_to "New Article", new_article_path %> to create one</h5>
+        <% if user_signed_in? %>
+          <h5>Click <%= link_to "New Article", new_article_path, id: "article-index-first-new-article-link" %> to create one</h5>
+        <% else %>
+          <h5>
+            <%= link_to "Sign In", new_user_session_path,
+              id: "article-index-first-article-sign-in" %>
+            or
+            <%= link_to "Sign Up", new_user_registration_path,
+              id: "article-index-first-article-sign-up" %>
+            to create one
+          </h5>
+        <% end %>
       </div>
     </div>
   </div>
