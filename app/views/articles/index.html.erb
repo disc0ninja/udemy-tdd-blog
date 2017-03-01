@@ -30,6 +30,7 @@
             <%= truncate(art.body, length: 500) %><br />
           </p>
           <small>
+            Created By: <%= art.user.email %><br />
             Last Updated: <%= art.updated_at.strftime("%B %e, %Y") %>
           </small>
         </div>

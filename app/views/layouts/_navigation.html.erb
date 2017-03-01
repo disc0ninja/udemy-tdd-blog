@@ -8,24 +8,37 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
-        <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+        <!-- Articl Links -->
+        <% if user_signed_in? %>
+          <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
+          <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+        <% else %>
+          <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
+        <% end %>
+        <!-- User registrations and session links -->
         <% if user_signed_in? %>
           <%= link_to "Sign Out", destroy_user_session_path, class: "mdl-navigation__link", id: "nav-bar-sign-out", method: :delete %>
+
           <%= link_to "Signed in as #{current_user.email}",edit_user_registration_path(current_user), class: "mdl-navigation__link", id: "nav-bar-current-user-show" %>
+
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link", id: "nav-bar-sign-up" %>
           <%= link_to "Sign In", new_user_session_path, class: "mdl-navigation__link", id: "nav-bar-sign-in" %>
         <% end %>
-        <a class="mdl-navigation__link" href="">Link</a>
       </nav>
     </div>
   </header>
+
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Blog</span>
     <nav class="mdl-navigation">
-      <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
-      <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+      <% if user_signed_in? %>
+        <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
+        <%= link_to "New Article", new_article_path, class: "mdl-navigation__link" %>
+      <% else %>
+        <%= link_to "All Articles", articles_path, class: "mdl-navigation__link" %>
+      <% end %>
+      <!-- User registrations and session Links -->
       <% if user_signed_in? %>
         <%= link_to "Signed in as #{current_user.email}",edit_user_registration_path(current_user), class: "mdl-navigation__link", id: "nav-drawer-current-user-show" %>
         <%= link_to "Sign Out", destroy_user_session_path, class: "mdl-navigation__link", id: "nav-drawer-sign-out", method: :delete %>
@@ -33,6 +46,5 @@
         <%= link_to "Sign Up", new_user_registration_path, class: "mdl-navigation__link", id: "nav-drawer-sign-up" %>
       <%= link_to "Sign In", new_user_session_path, class: "mdl-navigation__link", id: "nav-drawer-sign-in" %>
     <% end %>
-      <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>

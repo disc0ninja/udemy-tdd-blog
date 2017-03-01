@@ -1,6 +1,12 @@
 require "rails_helper"
 
 RSpec.feature "Creating Articles" do
+
+  before do
+    @john = User.create!(email: "john@example.com", password: "password")
+    login_as(@john)
+  end
+
   scenario "A user creates the first link to create a new article" do
     # Visit root
     visit "/"
@@ -16,7 +22,10 @@ RSpec.feature "Creating Articles" do
     # expect success message
     expect(page).to have_content("Article has been created successfully")
     # Redirects to the articles path (where the article is listed)
+    expect(Article.last.user).to eq(@john)
     expect(current_path).to eq("/articles")
+    expect(page).to have_content("Last Updated: #{Article.last.updated_at.strftime("%B %e, %Y")}")
+    expect(page).to have_content("Created By: #{@john.email}")
   end
 
   scenario "A user fails to create a new article without a title or body" do

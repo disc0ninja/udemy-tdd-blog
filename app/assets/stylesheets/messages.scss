@@ -27,3 +27,27 @@
 .mdl-button--colored-danger {
   background-color: lighten($danger-color, 13%);
 }
+
+.alert-alert {
+  background-color: lighten($danger-color, 40%);
+}
+
+.alert-alert-title {
+  background-color: lighten($danger-color, 20%);
+}
+
+.alert-notice {
+  background-color: lighten($success-color, 30%);
+}
+
+.alert-notice-title {
+  background-color: lighten($success-color, 10%);
+}
+
+.mdl-button--colored-notice {
+  background-color: $success-color;
+}
+
+.mdl-button--colored-alert {
+  background-color: lighten($danger-color, 13%);
+}
