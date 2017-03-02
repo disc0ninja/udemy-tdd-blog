@@ -18,3 +18,39 @@
     </div>
   </div>
 </div>
+<!-- Comments -->
+<hr />
+<%= form_for [@article, @comment],
+:html => {class: "", role: "form"} do |f| %>
+  <% if @comment.errors.any? %>
+    <%= render "articles/comment_errors" %>
+  <% end %>
+
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--6-col-phone mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_area :body, id: "comment-body", class: "mdl-textfield__input", rows: 10 %>
+        <%= f.label :body, "New Comment", class: "mdl-textfield__label", for: "comment-body" %>
+    </div>
+  </div>
+  <div class="mdl-grid">
+    <%= f.submit "Add Comment",
+      class: "mdl-button mdl-js-button mdl-button--raised
+        mdl-button-colored mdl-js-ripple-effect mdl-cell
+        mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+        mdl-cell--2-offset-tablet mdl-cell--4-col-tablet
+        mdl-cell--4-col-phone" %>
+  </div>
+<% end %>
+
+<% if @article.comments.any? %>
+  <% persisted_comments(@comments).each do |comment| %>
+    <%= comment.body %>
+    <%= time_ago_in_words(comment.created_at) %>
+    ago <br  />
+    by <%= comment.user.email %>
+  <% end %>
+<% else %>
+  <h3>There are no comments</h3>
+<% end %>

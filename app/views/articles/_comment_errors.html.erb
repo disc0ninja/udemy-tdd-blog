@@ -1,0 +1,23 @@
+<div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--4-col-phone
+      mdl-card mdl-shadow--3dp alert alert-danger">
+  <div class="mdl-card__title alert-danger-title">
+    <h4 class="center-block"><%= pluralize(@comment.errors.count, "Error") %>
+    prohibited this comment from being saved:</h4>
+  </div>
+  <div class="mld-card__supporting-text center-block">
+    <ul>
+      <%@comment.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="mdl-card__menu">
+    <a href="" class="close mdl-button mdl-js-button mdl-button--fab mdl-button--colored-danger mdl-js-ripple-effect" data-dismiss="alert">
+      <i class="material-icons">clear</i>
+    </a>
+  </div>
+</div>
