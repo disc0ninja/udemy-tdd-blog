@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-03T14:39:42-06:00">2017-03-03T14:39:42-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-03-03T15:07:45-06:00">2017-03-03T15:07:45-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1555,7 +1555,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :body, presence: true</code>
+          <code class="ruby">  validates :body, presence: true, length: { minimum: 4}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -5533,19 +5533,19 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    john = User.create(email: &quot;john@example.com&quot;, password: &quot;password&quot;)</code>
+          <code class="ruby">    @john = User.create(email: &quot;john@example.com&quot;, password: &quot;password&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    login_as(john)</code>
+          <code class="ruby">    login_as(@john)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    @article = Article.create(title: &quot;Title of Article&quot;, body: &quot;Body of article&quot;, user: john)</code>
+          <code class="ruby">    @article = Article.create(title: &quot;Title of Article&quot;, body: &quot;Body of article&quot;, user: @john)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -5683,19 +5683,19 @@
         <li class="covered" data-hits="4" data-linenumber="6">
           <span class="hits">4</span>
           
-          <code class="ruby">    john = User.create(email: &quot;john@example.com&quot;, password: &quot;password&quot;)</code>
+          <code class="ruby">    @john = User.create(email: &quot;john@example.com&quot;, password: &quot;password&quot;)</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="7">
           <span class="hits">4</span>
           
-          <code class="ruby">    login_as(john)</code>
+          <code class="ruby">    login_as(@john)</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
-          <code class="ruby">    @article = Article.create(title: &quot;Initial Title&quot;, body: &quot;Initial article body.&quot;, user: john)</code>
+          <code class="ruby">    @article = Article.create(title: &quot;Initial Title&quot;, body: &quot;Initial article body.&quot;, user: @john)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
