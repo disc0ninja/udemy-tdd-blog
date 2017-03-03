@@ -52,6 +52,10 @@ end
 group :test do
   # capybara for simulating user interactions during testing
   gem 'capybara', '2.12.1'
+
+  # Code climate test coverage gems
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
 group :development do
