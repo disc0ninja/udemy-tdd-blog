@@ -1,28 +1,55 @@
-<h2>Sign up</h2>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+    mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+    mdl-cell--6-col-phone ">
+    <h2>Sign up</h2>
+  </div>
+</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div class="mdl-grid">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--6-col-phone
+      mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+      <%= f.label :email, class: "mdl-textfield__label", for: "registration-email" %>
+      <%= f.email_field :email, id: "registration-email", class: "mdl-textfield__input", autofocus: true %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--6-col-phone
+      mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label :password, class: "mdl-textfield__label", for: "registration-password" %><br />
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, id: "registration-password", class: "mdl-textfield__input", autocomplete: "off" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--6-col-phone
+      mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= f.label :password_confirmation, class: "mdl-textfield__label", for: "registration-password-confirmation" %><br />
+      <%= f.password_field :password_confirmation, id: "registration-password-confirmation", class: "mdl-textfield__input", autocomplete: "off" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up", id: "new-registration-button" %>
+  <div class="mdl-grid">
+    <%= f.submit "Sign up", id: "new-registration-button",
+      class:"mdl-button mdl-js-button mdl-button--raised
+      mdl-button-colored mdl-js-ripple-effect mdl-cell
+      mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+      mdl-cell--2-offset-tablet mdl-cell--4-col-tablet
+      mdl-cell--4-col-phone" %>
   </div>
 <% end %>
 

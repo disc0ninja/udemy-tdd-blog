@@ -608,6 +608,37 @@
         1,
         null
       ],
+      "/home/disc0ninja/Documents/Udemy/rails/udemy-tdd-blog/app/helpers/devise_helper.rb": [
+        1,
+        1,
+        22,
+        null,
+        26,
+        10,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        10,
+        null,
+        null
+      ],
       "/home/disc0ninja/Documents/Udemy/rails/udemy-tdd-blog/spec/features/creating_article_spec.rb": [
         1,
         null,
@@ -1619,6 +1650,6 @@
         null
       ]
     },
-    "timestamp": 1488579561
+    "timestamp": 1488579613
   }
 }

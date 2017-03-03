@@ -1,25 +1,50 @@
-<h2>Log in</h2>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+    mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+    mdl-cell--6-col-phone ">
+    <h2>Sign In</h2>
+  </div>
+</div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+    mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+    mdl-cell--6-col-phone
+    mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :email, class: "mdl-textfield__label", for: "session-email" %><br />
+    <%= f.email_field :email, autofocus: true, id: "session-email", class: "mdl-textfield__input" %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+    mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+    mdl-cell--6-col-phone
+    mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <%= f.label :password, class: "mdl-textfield__label", for: "session-password" %><br />
+    <%= f.password_field :password, autocomplete: "off", id: "session-password", class: "mdl-textfield__input" %>
   </div>
+</div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
+      mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
+      mdl-cell--6-col-phone
+      mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
+  </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in", id: "sign-in-submit-btn" %>
+  <div class="mdl-grid">
+    <%= f.submit "Log in", id: "sign-in-submit-btn", class:"mdl-button mdl-js-button mdl-button--raised
+    mdl-button-colored mdl-js-ripple-effect mdl-cell
+    mdl-cell--4-col-desktop mdl-cell--4-offset-desktop
+    mdl-cell--2-offset-tablet mdl-cell--4-col-tablet
+    mdl-cell--4-col-phone" %>
   </div>
 <% end %>
 
