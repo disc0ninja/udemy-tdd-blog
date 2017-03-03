@@ -1,4 +1,4 @@
-<div class="mdl-grid">
+<div id"message-box" class="mdl-grid">
   <div class="mdl-card mdl-shadow--3dp mdl-cell
     mdl-cell--2-offset-desktop mdl-cell--8-col-desktop
     mdl-cell--1-offset-tablet mdl-cell--6-col-tablet
@@ -20,7 +20,7 @@
 </div>
 <!-- Comments -->
 <hr />
-<%= form_for [@article, @comment],
+<%= form_for [@article, @comment], remote: true,
 :html => {class: "", role: "form"} do |f| %>
   <% if @comment.errors.any? %>
     <%= render "articles/comment_errors" %>
@@ -45,12 +45,14 @@
 <% end %>
 
 <% if @article.comments.any? %>
-  <% persisted_comments(@comments).each do |comment| %>
-    <%= comment.body %>
-    <%= time_ago_in_words(comment.created_at) %>
-    ago <br  />
-    by <%= comment.user.email %>
-  <% end %>
+  <div id="messages">
+      <% persisted_comments(@comments).each do |comment| %>
+      <%= comment.body %>
+      <%= time_ago_in_words(comment.created_at) %>
+      ago <br  />
+      by <%= comment.user.email %>
+    <% end %>
+  </div>
 <% else %>
   <h3>There are no comments</h3>
 <% end %>

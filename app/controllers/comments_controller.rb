@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_article
+
   def create
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
@@ -9,11 +10,14 @@ class CommentsController < ApplicationController
       redirect_to new_user_session_path
     else
       if @comment.save
-        flash[:notice] = "Comment has been created"
+        flash.now[:notice] = "Comment has been created"
+        ActionCable.server.broadcast "comments",
+          render(partial: 'comments/comment', object: @comment)
       else
         flash.now[:alert] = "Comment has not been created"
+        redirect_to article_path(@article)
       end
-      redirect_to article_path(@article)
+
     end
   end
 
