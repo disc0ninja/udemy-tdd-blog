@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require material
 //= require_tree .
+//= require_tree ./channels
 
 // fix turbolinks v5 so they work with mdl
 document.addEventListener('turbolinks:load', function() {
