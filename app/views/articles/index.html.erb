@@ -22,7 +22,7 @@
       <div class"mdl-card__title">
         <h3 id="no-articles">No Articles Created Yet.</h3>
       </div>
-      <div class="mdl-card__supporting-text center-block">
+      <div class="mdl-card__supporting-text pull-right">
         <% if user_signed_in? %>
           <h5>Click <%= link_to "New Article", new_article_path, id: "article-index-first-new-article-link" %> to create one</h5>
         <% else %>
@@ -45,14 +45,16 @@
         <div class"mdl-card__title">
           <h4><%= link_to art.title, article_path(art), class: "pull-right" %></h4>
         </div>
-        <div class="mdl-card__supporting-text center-block">
-          <p>
-            <%= truncate(art.body, length: 500) %><br />
-          </p>
-          <small>
-            Created By: <%= art.user.email %><br />
-            Last Updated: <%= art.updated_at.strftime("%B %e, %Y") %>
-          </small>
+        <div class="mdl-card__supporting-text">
+          <%= truncate(art.body, length: 500) %><br />
+        </div>
+        <div class="mdl-card__actions card-bottom">
+
+              <small>Created By: <%= art.user.email %></small>
+            <br />
+              <small>Last Updated: <%= art.updated_at.strftime("%B %e, %Y") %></small>
+
+          </ul>
         </div>
       </div>
     <% end %>

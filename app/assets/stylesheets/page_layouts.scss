@@ -12,7 +12,6 @@
   }
 }
 
-// calc cross browser mixin
 @mixin calc($property, $expression) {
   #{$property}: -moz-calc(#{$expression});
   #{$property}: -webkit-calc(#{$expression});
@@ -36,6 +35,13 @@ p, small {
   margin-left: 5%;
 }
 
+/*==================================================
+==============* Default-Stylings *==================
+==================================================*/
+
+.card-bottom {
+  margin-top: 50%;
+}
 
 /***************************************************
 ******************** Media Queries *****************
